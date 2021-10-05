@@ -8,10 +8,10 @@
 - DB_HOST - хост БД. При запуске с помощью Docker - fifth_test_db
 - DB_PORT - порт БД
 
-###_Запуск:_
+### Запуск:
   `$ docker-compose up --build -d`
 
-###_Swagger-документация:_
+### Swagger-документация:
 В процессе...
 
 ## Стек:
