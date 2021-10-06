@@ -43,14 +43,14 @@ func GetPost(c *fiber.Ctx) error {
 		return c.Status(404).JSON(fiber.Map{
 			"status":  "error",
 			"message": "No post present",
-			"data":    nil,
+			"result":  nil,
 		})
 	}
 	if strings.Contains(q, "images") && strings.Contains(q, "description") {
 		return c.JSON(fiber.Map{
 			"status":  "success",
 			"message": "Post found",
-			"data": fiber.Map{
+			"result": fiber.Map{
 				"title":       post.Title,
 				"description": post.Description,
 				"price":       post.Price,
@@ -61,7 +61,7 @@ func GetPost(c *fiber.Ctx) error {
 		return c.JSON(fiber.Map{
 			"status":  "success",
 			"message": "Post found",
-			"data": fiber.Map{
+			"result": fiber.Map{
 				"title":  post.Title,
 				"price":  post.Price,
 				"images": post.Images,
@@ -71,7 +71,7 @@ func GetPost(c *fiber.Ctx) error {
 		return c.JSON(fiber.Map{
 			"status":  "success",
 			"message": "Post found",
-			"data": fiber.Map{
+			"result": fiber.Map{
 				"title":       post.Title,
 				"description": post.Description,
 				"price":       post.Price,
@@ -83,7 +83,7 @@ func GetPost(c *fiber.Ctx) error {
 	return c.JSON(fiber.Map{
 		"status":  "success",
 		"message": "Post found",
-		"data": fiber.Map{
+		"result": fiber.Map{
 			"title": post.Title,
 			"price": post.Price,
 			"image": post.Images[0],
